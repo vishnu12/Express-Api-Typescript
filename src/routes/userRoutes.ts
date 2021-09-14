@@ -1,5 +1,5 @@
 import express,{Response} from 'express'
-import { login, signup } from '../controllers/user'
+import { login, signup,logout } from '../controllers/user'
 
 const router=express.Router()
 
@@ -10,6 +10,8 @@ router.get('/',(_,res:Response)=>{
 router.post('/signup',signup)
 
 router.post('/login',login)
+
+router.post('/logout',logout)
 
 
 export {router as userRouter}

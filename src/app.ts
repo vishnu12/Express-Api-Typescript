@@ -1,5 +1,6 @@
 import express,{Application} from 'express'
 import dotenv from 'dotenv'
+import cookieParser from 'cookie-parser'
 import {connection} from './utils/db'
 import {userRouter} from './routes/userRoutes'
 import { postRouter } from './routes/postRoutes'
@@ -10,6 +11,7 @@ const app:Application=express()
 
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
+app.use(cookieParser())
 
 
 app.use('/user',userRouter)
